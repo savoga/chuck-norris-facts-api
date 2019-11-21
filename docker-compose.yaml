@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - ./app:/app/app
+    env_file:
+    - env-vars/local.env
+    ports:
+    - "80:80"
+    restart:
+      on-failure
